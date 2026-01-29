@@ -73,7 +73,24 @@ async function analyzeWithClaude(prompt) {
     }),
   });
 
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Claude API Error ${response.status}: ${errorText}`);
+  }
+
   const data = await response.json();
+  
+  // 응답 구조 검증
+  if (!data.content || !Array.isArray(data.content) || data.content.length === 0) {
+    console.error('Claude response:', JSON.stringify(data, null, 2));
+    throw new Error('Invalid Claude API response structure');
+  }
+  
+  if (!data.content[0].text) {
+    console.error('Claude content:', JSON.stringify(data.content, null, 2));
+    throw new Error('No text in Claude response');
+  }
+
   return data.content[0].text;
 }
 
@@ -141,6 +158,18 @@ function parseResponse(text) {
 // =============================================================================
 async function main() {
   console.log('🚀 GitBook → Jira 분석 시작\n');
+  
+  // 설정 검증
+  if (!CONFIG.anthropicApiKey) {
+    throw new Error('ANTHROPIC_API_KEY가 설정되지 않았습니다');
+  }
+  if (!CONFIG.jiraUrl) {
+    throw new Error('JIRA_URL이 설정되지 않았습니다');
+  }
+  if (!CONFIG.projectKey) {
+    throw new Error('JIRA_PROJECT_KEY가 설정되지 않았습니다');
+  }
+  
   console.log(`📁 변경 파일: ${CONFIG.changedFiles.length}개`);
   console.log(`🔧 Dry Run: ${CONFIG.dryRun}\n`);
 
