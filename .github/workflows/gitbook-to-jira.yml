@@ -10,6 +10,8 @@
 # - JIRA_API_TOKEN: Jira API 토큰
 # - JIRA_PROJECT_KEY: Jira 프로젝트 키 (예: SLEEP)
 # - ANTHROPIC_API_KEY: Claude API 키
+# - JIRA_STORY_POINTS_FIELD: (선택) Story Points 커스텀 필드 ID (기본: customfield_10016)
+# - CODE_BASE_PATH: (선택) 코드베이스 경로 (기본: src)
 # =============================================================================
 
 name: GitBook to Jira
@@ -66,6 +68,8 @@ jobs:
           JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
           JIRA_PROJECT_KEY: ${{ secrets.JIRA_PROJECT_KEY }}
+          JIRA_STORY_POINTS_FIELD: ${{ secrets.JIRA_STORY_POINTS_FIELD }}
+          CODE_BASE_PATH: ${{ vars.CODE_BASE_PATH || 'src' }}
           CHANGED_FILES: ${{ steps.changes.outputs.files }}
           DRY_RUN: ${{ inputs.dry_run || false }}
         run: node .github/scripts/analyze-docs.js
