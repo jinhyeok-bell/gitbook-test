@@ -32,6 +32,9 @@ class JiraClient {
 
   async request(endpoint, options = {}) {
     const url = `${this.baseUrl}/rest/api/3${endpoint}`;
+    
+    console.log(`      Jira API: ${options.method || 'GET'} ${endpoint}`);
+    
     const response = await fetch(url, {
       ...options,
       headers: {
@@ -43,15 +46,36 @@ class JiraClient {
     });
 
     const text = await response.text();
+    
+    // HTML 응답 체크 (인증 실패 또는 잘못된 URL)
+    if (text.startsWith('<!') || text.startsWith('<html')) {
+      throw new Error(`Jira 인증 실패 또는 잘못된 URL입니다. Status: ${response.status}`);
+    }
+    
     if (!response.ok) {
-      throw new Error(`Jira API Error ${response.status}: ${text}`);
+      let errorMsg = `Jira API Error ${response.status}`;
+      try {
+        const errorJson = JSON.parse(text);
+        errorMsg += `: ${JSON.stringify(errorJson.errors || errorJson.errorMessages || errorJson)}`;
+      } catch {
+        errorMsg += `: ${text.substring(0, 200)}`;
+      }
+      throw new Error(errorMsg);
     }
 
     return text ? JSON.parse(text) : null;
   }
 
   async searchIssues(jql) {
-    return this.request(`/search?jql=${encodeURIComponent(jql)}&maxResults=5`);
+    // Jira Cloud는 POST /rest/api/3/search 사용
+    return this.request('/search', {
+      method: 'POST',
+      body: JSON.stringify({
+        jql: jql,
+        maxResults: 5,
+        fields: ['key', 'summary', 'status']
+      })
+    });
   }
 
   async createIssue({ project, issueType, summary, description, priority, labels, storyPoints }) {
@@ -316,6 +340,13 @@ async function main() {
     }
   }
   
+  // URL 형식 확인
+  if (!CONFIG.jiraUrl.includes('atlassian.net') && !CONFIG.jiraUrl.includes('jira')) {
+    console.log(`⚠️ JIRA_URL이 올바른지 확인하세요: ${CONFIG.jiraUrl}`);
+  }
+  
+  console.log(`🔗 Jira URL: ${CONFIG.jiraUrl}`);
+  console.log(`📋 Project: ${CONFIG.projectKey}`);
   console.log(`📁 변경 파일: ${CONFIG.changedFiles.length}개`);
   console.log(`🔧 Dry Run: ${CONFIG.dryRun}\n`);
 
