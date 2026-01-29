@@ -1,0 +1,95 @@
+# =============================================================================
+# GitBook 문서 변경 → Jira 티켓 자동 생성
+# =============================================================================
+# 기획팀이 GitBook을 통해 docs/ 폴더에 push하면
+# AI가 변경점을 분석하여 필요한 경우 Jira 티켓을 자동 생성합니다.
+#
+# 필요한 GitHub Secrets:
+# - JIRA_URL: https://your-company.atlassian.net
+# - JIRA_USERNAME: your.email@company.com
+# - JIRA_API_TOKEN: Jira API 토큰
+# - JIRA_PROJECT_KEY: Jira 프로젝트 키 (예: SLEEP)
+# - ANTHROPIC_API_KEY: Claude API 키
+# =============================================================================
+
+name: GitBook to Jira
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'docs/**/*.md'
+      - 'docs/**/*.mdx'
+
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry Run (티켓 생성 없이 분석만)'
+        type: boolean
+        default: false
+
+jobs:
+  detect-and-create:
+    name: 📄 Analyze Docs & Create Tickets
+    runs-on: ubuntu-latest
+    
+    services:
+      mcp-atlassian:
+        image: ghcr.io/sooperset/mcp-atlassian:latest
+        env:
+          JIRA_URL: ${{ secrets.JIRA_URL }}
+          JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          READ_ONLY_MODE: ${{ inputs.dry_run == true }}
+        ports:
+          - 9000:9000
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Get changed files
+        id: changes
+        run: |
+          FILES=$(git diff --name-only HEAD~1 HEAD | grep -E '^docs/.*\.(md|mdx)$' || true)
+          
+          if [ -z "$FILES" ]; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "files=$(echo "$FILES" | jq -R -s -c 'split("\n") | map(select(length > 0))')" >> $GITHUB_OUTPUT
+            echo "📝 Changed: $FILES"
+          fi
+
+      - name: Setup Node.js
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Wait for MCP server
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          timeout 60 bash -c 'until curl -s http://localhost:9000/health > /dev/null 2>&1; do sleep 2; done' || true
+
+      - name: Analyze and create tickets
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MCP_SERVER_URL: 'http://localhost:9000'
+          CHANGED_FILES: ${{ steps.changes.outputs.files }}
+          JIRA_PROJECT_KEY: ${{ secrets.JIRA_PROJECT_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
+          JIRA_URL: ${{ secrets.JIRA_URL }}
+        run: node .github/scripts/analyze-docs.js
+
+      - name: Summary
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          echo "## 📋 Results" >> $GITHUB_STEP_SUMMARY
+          if [ -f /tmp/created_tickets.json ]; then
+            echo "### Created Tickets:" >> $GITHUB_STEP_SUMMARY
+            cat /tmp/created_tickets.json | jq -r '.[] | "- [\(.key)](\(.url)): \(.summary)"' >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "No tickets created" >> $GITHUB_STEP_SUMMARY
+          fi
