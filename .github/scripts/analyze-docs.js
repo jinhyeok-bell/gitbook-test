@@ -1,5 +1,7 @@
 /**
  * GitBook 문서 변경 분석 및 Jira 티켓 생성
+ * - Claude AI로 문서 분석
+ * - Jira REST API로 직접 티켓 생성
  */
 
 const fs = require('fs');
@@ -7,50 +9,67 @@ const { execSync } = require('child_process');
 
 const CONFIG = {
   anthropicApiKey: process.env.ANTHROPIC_API_KEY,
-  mcpServerUrl: process.env.MCP_SERVER_URL || 'http://localhost:9000',
-  jiraUrl: process.env.JIRA_URL,
-  projectKey: process.env.JIRA_PROJECT_KEY || 'SLEEP',
+  jiraUrl: process.env.JIRA_URL?.replace(/\/$/, ''),
+  jiraUsername: process.env.JIRA_USERNAME,
+  jiraApiToken: process.env.JIRA_API_TOKEN,
+  projectKey: process.env.JIRA_PROJECT_KEY,
   dryRun: process.env.DRY_RUN === 'true',
   changedFiles: JSON.parse(process.env.CHANGED_FILES || '[]'),
 };
 
 // =============================================================================
-// MCP Atlassian Client
+// Jira REST API Client
 // =============================================================================
-class MCPClient {
-  constructor(serverUrl) {
-    this.serverUrl = serverUrl;
+class JiraClient {
+  constructor(baseUrl, username, apiToken) {
+    this.baseUrl = baseUrl;
+    this.auth = Buffer.from(`${username}:${apiToken}`).toString('base64');
   }
 
-  async callTool(toolName, params) {
-    const response = await fetch(`${this.serverUrl}/mcp`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        jsonrpc: '2.0',
-        id: Date.now(),
-        method: 'tools/call',
-        params: { name: toolName, arguments: params },
-      }),
+  async request(endpoint, options = {}) {
+    const url = `${this.baseUrl}/rest/api/3${endpoint}`;
+    const response = await fetch(url, {
+      ...options,
+      headers: {
+        'Authorization': `Basic ${this.auth}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        ...options.headers,
+      },
     });
 
-    const data = await response.json();
-    if (data.error) throw new Error(data.error.message);
-    return data.result;
+    const text = await response.text();
+    if (!response.ok) {
+      throw new Error(`Jira API Error ${response.status}: ${text}`);
+    }
+
+    return text ? JSON.parse(text) : null;
   }
 
   async searchIssues(jql) {
-    return this.callTool('jira_search', { jql, max_results: 5 });
+    return this.request(`/search?jql=${encodeURIComponent(jql)}&maxResults=5`);
   }
 
   async createIssue({ project, issueType, summary, description, priority, labels }) {
-    return this.callTool('jira_create_issue', {
-      project_key: project,
-      issue_type: issueType,
-      summary,
-      description,
-      priority,
-      labels,
+    return this.request('/issue', {
+      method: 'POST',
+      body: JSON.stringify({
+        fields: {
+          project: { key: project },
+          issuetype: { name: issueType },
+          summary: summary,
+          description: {
+            type: 'doc',
+            version: 1,
+            content: [{
+              type: 'paragraph',
+              content: [{ type: 'text', text: description }]
+            }]
+          },
+          priority: { name: priority || 'Medium' },
+          labels: labels || [],
+        }
+      }),
     });
   }
 }
@@ -67,8 +86,8 @@ async function analyzeWithClaude(prompt) {
       'anthropic-version': '2023-06-01',
     },
     body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 4096,
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 2048,
       messages: [{ role: 'user', content: prompt }],
     }),
   });
@@ -80,15 +99,8 @@ async function analyzeWithClaude(prompt) {
 
   const data = await response.json();
   
-  // 응답 구조 검증
-  if (!data.content || !Array.isArray(data.content) || data.content.length === 0) {
-    console.error('Claude response:', JSON.stringify(data, null, 2));
-    throw new Error('Invalid Claude API response structure');
-  }
-  
-  if (!data.content[0].text) {
-    console.error('Claude content:', JSON.stringify(data.content, null, 2));
-    throw new Error('No text in Claude response');
+  if (!data.content?.[0]?.text) {
+    throw new Error('Invalid Claude API response');
   }
 
   return data.content[0].text;
@@ -160,14 +172,11 @@ async function main() {
   console.log('🚀 GitBook → Jira 분석 시작\n');
   
   // 설정 검증
-  if (!CONFIG.anthropicApiKey) {
-    throw new Error('ANTHROPIC_API_KEY가 설정되지 않았습니다');
-  }
-  if (!CONFIG.jiraUrl) {
-    throw new Error('JIRA_URL이 설정되지 않았습니다');
-  }
-  if (!CONFIG.projectKey) {
-    throw new Error('JIRA_PROJECT_KEY가 설정되지 않았습니다');
+  const required = ['anthropicApiKey', 'jiraUrl', 'jiraUsername', 'jiraApiToken', 'projectKey'];
+  for (const key of required) {
+    if (!CONFIG[key]) {
+      throw new Error(`${key}가 설정되지 않았습니다`);
+    }
   }
   
   console.log(`📁 변경 파일: ${CONFIG.changedFiles.length}개`);
@@ -178,7 +187,7 @@ async function main() {
     return;
   }
 
-  const mcp = new MCPClient(CONFIG.mcpServerUrl);
+  const jira = new JiraClient(CONFIG.jiraUrl, CONFIG.jiraUsername, CONFIG.jiraApiToken);
   const createdTickets = [];
 
   for (const filePath of CONFIG.changedFiles) {
@@ -206,15 +215,15 @@ async function main() {
 
         // 중복 체크
         try {
-          const existing = await mcp.searchIssues(
-            `project = "${CONFIG.projectKey}" AND summary ~ "${ticket.summary.substring(0, 30)}" AND status != Done`
+          const searchResult = await jira.searchIssues(
+            `project = "${CONFIG.projectKey}" AND summary ~ "${ticket.summary.substring(0, 30).replace(/"/g, '\\"')}" AND status != Done`
           );
-          if (existing?.issues?.length) {
-            console.log(`   ⚠️ 유사 티켓 존재: ${existing.issues[0].key}`);
+          if (searchResult?.issues?.length) {
+            console.log(`   ⚠️ 유사 티켓 존재: ${searchResult.issues[0].key}`);
             continue;
           }
         } catch (e) {
-          // 검색 실패 시 계속 진행
+          console.log(`   ⚠️ 중복 체크 실패: ${e.message}`);
         }
 
         if (CONFIG.dryRun) {
@@ -222,7 +231,7 @@ async function main() {
           createdTickets.push({ key: 'DRY-RUN', url: '#', summary: ticket.summary });
         } else {
           const desc = `${ticket.description}\n\n---\n📄 문서: ${filePath}`;
-          const result = await mcp.createIssue({
+          const result = await jira.createIssue({
             project: CONFIG.projectKey,
             issueType: ticket.type,
             summary: ticket.summary,
@@ -231,11 +240,10 @@ async function main() {
             labels: ticket.labels,
           });
 
-          const ticketKey = result.key || result.issue?.key;
-          console.log(`   ✅ 생성: ${ticketKey}`);
+          console.log(`   ✅ 생성: ${result.key}`);
           createdTickets.push({
-            key: ticketKey,
-            url: `${CONFIG.jiraUrl}/browse/${ticketKey}`,
+            key: result.key,
+            url: `${CONFIG.jiraUrl}/browse/${result.key}`,
             summary: ticket.summary,
           });
         }

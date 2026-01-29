@@ -29,20 +29,9 @@ on:
         default: false
 
 jobs:
-  detect-and-create:
-    name: 📄 Analyze Docs & Create Tickets
+  analyze-and-create:
+    name: 📄 Analyze & Create Tickets
     runs-on: ubuntu-latest
-    
-    services:
-      mcp-atlassian:
-        image: ghcr.io/sooperset/mcp-atlassian:latest
-        env:
-          JIRA_URL: ${{ secrets.JIRA_URL }}
-          JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
-          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-          READ_ONLY_MODE: ${{ inputs.dry_run == true }}
-        ports:
-          - 9000:9000
 
     steps:
       - name: Checkout
@@ -69,20 +58,16 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Wait for MCP server
-        if: steps.changes.outputs.has_changes == 'true'
-        run: |
-          timeout 60 bash -c 'until curl -s http://localhost:9000/health > /dev/null 2>&1; do sleep 2; done' || true
-
       - name: Analyze and create tickets
         if: steps.changes.outputs.has_changes == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          MCP_SERVER_URL: 'http://localhost:9000'
-          CHANGED_FILES: ${{ steps.changes.outputs.files }}
-          JIRA_PROJECT_KEY: ${{ secrets.JIRA_PROJECT_KEY }}
-          DRY_RUN: ${{ inputs.dry_run || false }}
           JIRA_URL: ${{ secrets.JIRA_URL }}
+          JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_PROJECT_KEY: ${{ secrets.JIRA_PROJECT_KEY }}
+          CHANGED_FILES: ${{ steps.changes.outputs.files }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
         run: node .github/scripts/analyze-docs.js
 
       - name: Summary
