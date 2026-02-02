@@ -336,13 +336,6 @@ SEO:
 - Android Chrome
 ```
 
-### 6.4 반응형 브레이크포인트
-```
-- Mobile: 320px - 767px
-- Tablet: 768px - 1023px
-- Desktop: 1024px+
-```
-
 ---
 
 ## 7. 데이터베이스 스키마 (Database)
