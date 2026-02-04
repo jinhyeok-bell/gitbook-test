@@ -12,7 +12,6 @@ GitBook 편집 → GitHub 동기화 → AI 분석 → Jira 티켓 생성
 2. GitBook이 `docs/` 폴더에 자동 커밋
 3. GitHub Actions가 변경 감지
 4. Claude AI가 "개발 작업 필요 여부" 분석
-5. 필요 시 Jira 티켓 자동 생성 (중복 체크 포함)
 
 ## 📁 구조
 
