@@ -1,0 +1,3100 @@
+{
+  "version": "2.6",
+  "children": [
+    {
+      "type": "frame",
+      "id": "40zKW",
+      "x": 0,
+      "y": 0,
+      "name": "Landing Page - Desktop",
+      "width": 1440,
+      "fill": "#1a1a1a",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "5Ftru",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#1a1a1a",
+          "padding": [
+            16,
+            120
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "kV7lG",
+              "name": "logo",
+              "fill": "#FFFFFF",
+              "content": "Sleep Thera",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "XlnAI",
+              "name": "headerRight",
+              "gap": 32,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "dltyv",
+                  "name": "navLinks",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "S8IGS",
+                      "name": "nav1",
+                      "fill": "#a0a0a0",
+                      "content": "서비스 소개",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "OtyEv",
+                      "name": "nav2",
+                      "fill": "#a0a0a0",
+                      "content": "이용 후기",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "WbzYO",
+                      "name": "nav3",
+                      "fill": "#a0a0a0",
+                      "content": "FAQ",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "5XRUx",
+                  "name": "headerCta",
+                  "fill": "#666666",
+                  "cornerRadius": 8,
+                  "padding": [
+                    12,
+                    24
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "NwHj0",
+                      "name": "headerCtaText",
+                      "fill": "#FFFFFF",
+                      "content": "내 수면 상태 확인하기",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Ev3bB",
+          "name": "Hero Section",
+          "width": "fill_container",
+          "height": 600,
+          "fill": "#1a1a1a",
+          "gap": 80,
+          "padding": [
+            80,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "dWnAL",
+              "name": "heroLeft",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "USy1f",
+                  "name": "heroTitle",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "수면제 없이 잠드는 밤,\nSleep Thera",
+                  "lineHeight": 1.2,
+                  "fontFamily": "Inter",
+                  "fontSize": 56,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "text",
+                  "id": "rh0xI",
+                  "name": "heroSub",
+                  "fill": "#a0a0a0",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "약 부작용 없는 뇌과학 기반 디지털 수면 치료제.\nCE 인증, 서울대병원 연구협력으로 검증된 효과.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "2LnKW",
+                  "name": "heroCtas",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zqTVr",
+                      "name": "heroPrimaryCta",
+                      "fill": "#666666",
+                      "cornerRadius": 8,
+                      "padding": [
+                        16,
+                        32
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "EEEOr",
+                          "name": "heroPrimaryText",
+                          "fill": "#FFFFFF",
+                          "content": "내 수면 상태 확인하기",
+                          "fontFamily": "Inter",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "HJJAC",
+                      "name": "heroSecondaryCta",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#666666"
+                      },
+                      "padding": [
+                        16,
+                        32
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "zXBGE",
+                          "name": "heroSecondaryText",
+                          "fill": "#888888",
+                          "content": "자세히 알아보기",
+                          "fontFamily": "Inter",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "97Il2",
+                  "name": "heroBadges",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "5t7Ja",
+                      "name": "badge1",
+                      "fill": "#2a2a2a",
+                      "cornerRadius": 6,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "1HZWR",
+                          "name": "badge1Text",
+                          "fill": "#a0a0a0",
+                          "content": "CE MDR 인증",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Ine05",
+                      "name": "badge2",
+                      "fill": "#2a2a2a",
+                      "cornerRadius": 6,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "vHkpI",
+                          "name": "badge2Text",
+                          "fill": "#a0a0a0",
+                          "content": "혁신의료기기 지정",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Mn3JG",
+              "name": "heroRight",
+              "width": 500,
+              "height": 400,
+              "fill": "#2a2a2a",
+              "cornerRadius": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Tkpjc",
+                  "name": "heroPlaceholder",
+                  "fill": "#6b6b6b",
+                  "content": "Product Screenshot",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "IZS67",
+          "name": "Problem Section",
+          "width": "fill_container",
+          "fill": "#0f0f0f",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "LQHnz",
+              "name": "problemHeader",
+              "width": 800,
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "S5YYS",
+                  "name": "problemTitle",
+                  "fill": "#FFFFFF",
+                  "content": "불면증, 혼자 감당하기 힘드셨죠?",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 40,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "text",
+                  "id": "cuUYZ",
+                  "name": "problemSub",
+                  "fill": "#a0a0a0",
+                  "content": "이제 약의 부작용까지 감당하실 필요 없습니다",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NyXKr",
+              "name": "statsRow",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "UvGhh",
+                  "name": "stat1",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "IOg8W",
+                      "name": "stat1Num",
+                      "fill": "#888888",
+                      "content": "600만 명",
+                      "fontFamily": "Inter",
+                      "fontSize": 48,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Kj7Zc",
+                      "name": "stat1Desc",
+                      "fill": "#a0a0a0",
+                      "content": "국내 불면증 환자",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Lz4hW",
+                  "name": "stat2",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "5Mpxs",
+                      "name": "stat2Num",
+                      "fill": "#888888",
+                      "content": "70%",
+                      "fontFamily": "Inter",
+                      "fontSize": 48,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "qK4Tz",
+                      "name": "stat2Desc",
+                      "fill": "#a0a0a0",
+                      "content": "치료받지 않는 비율",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "1cCau",
+                  "name": "stat3",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "JCHqQ",
+                      "name": "stat3Num",
+                      "fill": "#888888",
+                      "content": "의존성",
+                      "fontFamily": "Inter",
+                      "fontSize": 48,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "I5Htd",
+                      "name": "stat3Desc",
+                      "fill": "#a0a0a0",
+                      "content": "수면제 장기복용 부작용",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "DWpoy",
+          "name": "Solution Section",
+          "width": "fill_container",
+          "fill": "#1a1a1a",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "obRc3",
+              "name": "solutionHeader",
+              "width": 800,
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "koQnf",
+                  "name": "solutionTitle",
+                  "fill": "#FFFFFF",
+                  "content": "Sleep Thera는 다릅니다",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 40,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "text",
+                  "id": "qyr5f",
+                  "name": "solutionSub",
+                  "fill": "#a0a0a0",
+                  "content": "뇌과학 기반의 비약물 디지털 치료제",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Pwzcn",
+              "name": "benefitsRow",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "HGz5x",
+                  "name": "benefit1",
+                  "width": "fill_container",
+                  "fill": "#2a2a2a",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "bLunR",
+                      "name": "b1Icon",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "#666666",
+                      "cornerRadius": 32,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Sg5ye",
+                          "name": "b1IconText",
+                          "content": "💊",
+                          "fontFamily": "Inter",
+                          "fontSize": 32,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "EuAwt",
+                      "name": "b1Title",
+                      "fill": "#FFFFFF",
+                      "content": "비약물 치료",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jiYiN",
+                      "name": "b1Desc",
+                      "fill": "#a0a0a0",
+                      "content": "약 부작용 걱정 없이\n안전하게 수면 개선",
+                      "lineHeight": 1.5,
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "MPtDd",
+                  "name": "benefit2",
+                  "width": "fill_container",
+                  "fill": "#2a2a2a",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "hJV5s",
+                      "name": "b2Icon",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "#666666",
+                      "cornerRadius": 32,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iT5Mo",
+                          "name": "b2IconText",
+                          "content": "🎯",
+                          "fontFamily": "Inter",
+                          "fontSize": 32,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "lJipv",
+                      "name": "b2Title",
+                      "fill": "#FFFFFF",
+                      "content": "개인 맞춤",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "caNlv",
+                      "name": "b2Desc",
+                      "fill": "#a0a0a0",
+                      "content": "AI가 분석한 수면 패턴 기반\n맞춤형 테라피 제공",
+                      "lineHeight": 1.5,
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "USSGw",
+                  "name": "benefit3",
+                  "width": "fill_container",
+                  "fill": "#2a2a2a",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "dqAoc",
+                      "name": "b3Icon",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "#666666",
+                      "cornerRadius": 32,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Hbuo0",
+                          "name": "b3IconText",
+                          "content": "📊",
+                          "fontFamily": "Inter",
+                          "fontSize": 32,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "3Z5n7",
+                      "name": "b3Title",
+                      "fill": "#FFFFFF",
+                      "content": "임상 검증",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "7dWZn",
+                      "name": "b3Desc",
+                      "fill": "#a0a0a0",
+                      "content": "CE 인증 획득,\n서울대병원 연구 협력",
+                      "lineHeight": 1.5,
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "vX6Ve",
+          "name": "Testimonials Section",
+          "width": "fill_container",
+          "fill": "#0f0f0f",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "wEkZi",
+              "name": "testHeader",
+              "fill": "#FFFFFF",
+              "content": "실제 사용자들의 이야기",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "tv4jZ",
+              "name": "testCards",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "MGng2",
+                  "name": "testCard1",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "kx0yX",
+                      "name": "test1Quote",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "\"수면제 먹으면 다음 날 속이 너무 메스꺼웠는데, 이건 그런 게 없어서 좋아요\"",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "dzzKt",
+                      "name": "test1Author",
+                      "fill": "#a0a0a0",
+                      "content": "이** (30대)",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "V2DFb",
+                  "name": "testCard2",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "184lt",
+                      "name": "test2Quote",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "\"약 먹어도 1~2시간 뒤척였는데, 이제 30분 안에 잠들어요. 진짜예요\"",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "YlLwS",
+                      "name": "test2Author",
+                      "fill": "#a0a0a0",
+                      "content": "조** (40대)",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "8MPzn",
+                  "name": "testCard3",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ve0SP",
+                      "name": "test3Quote",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "\"앱이라 솔직히 반신반의했는데, 약보다 낫더라고요\"",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "XxOmW",
+                      "name": "test3Author",
+                      "fill": "#a0a0a0",
+                      "content": "이** (30대)",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "G5RWK",
+          "name": "Register Section",
+          "width": "fill_container",
+          "fill": "#1a1a1a",
+          "gap": 80,
+          "padding": [
+            80,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "gRgDM",
+              "name": "regLeft",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VldDn",
+                  "name": "regTitle",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "4주 수면 테라피,\n무료로 체험하기",
+                  "lineHeight": 1.2,
+                  "fontFamily": "Inter",
+                  "fontSize": 40,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "text",
+                  "id": "WYUMY",
+                  "name": "regSub",
+                  "fill": "#a0a0a0",
+                  "content": "더 빨리 잠들고, 덜 깨고, 더 개운하게",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "76Ddv",
+                  "name": "regSocial",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "3O2WD",
+                      "name": "regSocialIcon",
+                      "content": "👥",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Eyn2a",
+                      "name": "regSocialText",
+                      "fill": "#888888",
+                      "content": "이미 230명이 신청했어요",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "A8tK3",
+              "name": "regRight",
+              "width": 480,
+              "fill": "#2a2a2a",
+              "cornerRadius": 16,
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 40,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "0J2wq",
+                  "name": "regEmailInput",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 8,
+                  "padding": [
+                    16,
+                    20
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "kVSms",
+                      "name": "regEmailPlaceholder",
+                      "fill": "#6b6b6b",
+                      "content": "이메일 주소",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zIRHu",
+                  "name": "regPhoneInput",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 8,
+                  "padding": [
+                    16,
+                    20
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Lr4Y9",
+                      "name": "regPhonePlaceholder",
+                      "fill": "#6b6b6b",
+                      "content": "휴대폰번호 (선택)",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "4SHyy",
+                  "name": "regCheckbox",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "J1AMs",
+                      "name": "regCheckboxBox",
+                      "width": 24,
+                      "height": 24,
+                      "cornerRadius": 4,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#6b6b6b"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "7QxMt",
+                      "name": "regCheckboxLabel",
+                      "fill": "#a0a0a0",
+                      "content": "개인정보 수집 동의 (필수)",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NlL91",
+                  "name": "regSubmitBtn",
+                  "width": "fill_container",
+                  "height": 56,
+                  "fill": "#666666",
+                  "cornerRadius": 8,
+                  "padding": [
+                    16,
+                    0
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EOe0u",
+                      "name": "regSubmitText",
+                      "fill": "#FFFFFF",
+                      "content": "무료로 시작하기",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "zhJ9k",
+          "name": "FAQ Section",
+          "width": "fill_container",
+          "fill": "#0f0f0f",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            80,
+            200
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "lB2po",
+              "name": "faqTitle",
+              "fill": "#FFFFFF",
+              "content": "자주 묻는 질문",
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "QoiSR",
+              "name": "faqItems",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "pyZ4f",
+                  "name": "faqItem1",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 12,
+                  "padding": 24,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "nDFlW",
+                      "name": "faq1Q",
+                      "fill": "#FFFFFF",
+                      "content": "Sleep Thera는 어떤 원리로 작동하나요?",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "4yqG3",
+                      "name": "faq1Icon",
+                      "fill": "#888888",
+                      "content": "+",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nBWc2",
+                  "name": "faqItem2",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 12,
+                  "padding": 24,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "jSLEI",
+                      "name": "faq2Q",
+                      "fill": "#FFFFFF",
+                      "content": "기존 수면제와 어떻게 다른가요?",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s5k6Y",
+                      "name": "faq2Icon",
+                      "fill": "#888888",
+                      "content": "+",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "3kwvh",
+                  "name": "faqItem3",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 12,
+                  "padding": 24,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "thvRE",
+                      "name": "faq3Q",
+                      "fill": "#FFFFFF",
+                      "content": "부작용은 없나요?",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "DBeEW",
+                      "name": "faq3Icon",
+                      "fill": "#888888",
+                      "content": "+",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vUw9M",
+                  "name": "faqItem4",
+                  "width": "fill_container",
+                  "fill": "#1a1a1a",
+                  "cornerRadius": 12,
+                  "padding": 24,
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "IG9F0",
+                      "name": "faq4Q",
+                      "fill": "#FFFFFF",
+                      "content": "비용은 얼마인가요?",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "9GVc0",
+                      "name": "faq4Icon",
+                      "fill": "#888888",
+                      "content": "+",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YoI0s",
+          "name": "Footer",
+          "width": "fill_container",
+          "fill": "#0a0a14",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            48,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "nbnGK",
+              "name": "footerTop",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BysPO",
+                  "name": "footerBrand",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "1KllO",
+                      "name": "footerLogo",
+                      "fill": "#FFFFFF",
+                      "content": "Sleep Thera",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "cl9he",
+                      "name": "footerCompany",
+                      "fill": "#6b6b6b",
+                      "content": "Bell Therapeutics Inc.",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "SyW3I",
+                      "name": "footerEmail",
+                      "fill": "#6b6b6b",
+                      "content": "contact@belltherapeutics.com",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dJZnU",
+                  "name": "footerLinks",
+                  "gap": 48,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "W6SH0",
+                      "name": "footerCol2",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "B2qEC",
+                          "name": "footerCol2Title",
+                          "fill": "#FFFFFF",
+                          "content": "법적 정보",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "aeaNR",
+                          "name": "footerCol2Link1",
+                          "fill": "#6b6b6b",
+                          "content": "개인정보처리방침",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "1tubj",
+                          "name": "footerCol2Link2",
+                          "fill": "#6b6b6b",
+                          "content": "이용약관",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QtjPi",
+              "name": "footerDivider",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "#2a2a2a"
+            },
+            {
+              "type": "frame",
+              "id": "0RAPx",
+              "name": "footerBottom",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wXGse",
+                  "name": "footerCopyright",
+                  "fill": "#4a4a4a",
+                  "content": "© 2026 Bell Therapeutics Inc. All rights reserved.",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "ylw1G",
+                  "name": "footerDisclaimer",
+                  "fill": "#4a4a4a",
+                  "content": "본 제품은 아직 국내 의료기기 허가를 받지 않았습니다",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "nTRPE",
+      "x": 1540,
+      "y": 0,
+      "name": "Test - Intro",
+      "width": 800,
+      "height": 600,
+      "fill": "#1a1a1a",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "xdfq5",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#1a1a1a",
+          "padding": [
+            16,
+            48
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "bzN8O",
+              "name": "introLogo",
+              "fill": "#FFFFFF",
+              "content": "Sleep Thera",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "HRVli",
+          "name": "introContent",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            80,
+            120
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "RSJit",
+              "name": "introIcon",
+              "width": 120,
+              "height": 120,
+              "fill": "#666666",
+              "cornerRadius": 60,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "imy1u",
+                  "name": "introIconText",
+                  "content": "💤",
+                  "fontFamily": "Inter",
+                  "fontSize": 60,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "bTrEs",
+              "name": "introTitle",
+              "fill": "#FFFFFF",
+              "content": "내 불면증은 얼마나 심각할까?",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 40,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "text",
+              "id": "IDxwc",
+              "name": "introSub",
+              "fill": "#a0a0a0",
+              "content": "30초 만에 내 수면 건강 상태를 확인해보세요",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "e6AKO",
+              "name": "introBtn",
+              "fill": "#666666",
+              "cornerRadius": 8,
+              "padding": [
+                20,
+                48
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tG1SG",
+                  "name": "introBtnText",
+                  "fill": "#FFFFFF",
+                  "content": "테스트 시작하기",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "q25fQ",
+      "x": 2440,
+      "y": 0,
+      "name": "Test - Question",
+      "width": 800,
+      "height": 700,
+      "fill": "#1a1a1a",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "1Jnm1",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#1a1a1a",
+          "padding": [
+            16,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "4hmix",
+              "name": "qBack",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Nn4eM",
+                  "name": "qBackIcon",
+                  "fill": "#FFFFFF",
+                  "content": "←",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "2hfMW",
+                  "name": "qBackText",
+                  "fill": "#a0a0a0",
+                  "content": "뒤로",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "8tqt5",
+              "name": "qLogo",
+              "fill": "#FFFFFF",
+              "content": "Sleep Thera",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "qamYi",
+              "name": "qPlaceholder",
+              "width": 80,
+              "height": 24
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ah6z0",
+          "name": "progressBar",
+          "width": "fill_container",
+          "height": 8,
+          "fill": "#2a2a2a",
+          "children": [
+            {
+              "type": "frame",
+              "id": "RJzVz",
+              "name": "progressFill",
+              "width": 250,
+              "height": 8,
+              "fill": "#666666"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "rvN4T",
+          "name": "qContent",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "CyPRN",
+              "name": "qPartLabel",
+              "fill": "#888888",
+              "content": "Part 1 / 3",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "6BMIl",
+              "name": "qTitle",
+              "fill": "#FFFFFF",
+              "content": "어떤 수면 고민이 있으신가요?",
+              "fontFamily": "Inter",
+              "fontSize": 32,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "text",
+              "id": "6vaWh",
+              "name": "qSubtitle",
+              "fill": "#a0a0a0",
+              "content": "복수 선택 가능",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "Martg",
+              "name": "qOptions",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "2YY5T",
+                  "name": "opt1",
+                  "width": "fill_container",
+                  "fill": "#666666",
+                  "cornerRadius": 12,
+                  "gap": 16,
+                  "padding": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Db96q",
+                      "name": "opt1Check",
+                      "width": 24,
+                      "height": 24,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 4
+                    },
+                    {
+                      "type": "text",
+                      "id": "FENMR",
+                      "name": "opt1Text",
+                      "fill": "#FFFFFF",
+                      "content": "잠들기가 어려워요",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "1qsWz",
+                  "name": "opt2",
+                  "width": "fill_container",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#3a3a3a"
+                  },
+                  "gap": 16,
+                  "padding": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Yxebr",
+                      "name": "opt2Check",
+                      "width": 24,
+                      "height": 24,
+                      "cornerRadius": 4,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#6b6b6b"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "7BstQ",
+                      "name": "opt2Text",
+                      "fill": "#FFFFFF",
+                      "content": "자주 깨요",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "QbTbF",
+                  "name": "opt3",
+                  "width": "fill_container",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#3a3a3a"
+                  },
+                  "gap": 16,
+                  "padding": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Vgbw8",
+                      "name": "opt3Check",
+                      "width": 24,
+                      "height": 24,
+                      "cornerRadius": 4,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#6b6b6b"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "w3Wng",
+                      "name": "opt3Text",
+                      "fill": "#FFFFFF",
+                      "content": "너무 일찍 깨요",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "FNbYJ",
+                  "name": "opt4",
+                  "width": "fill_container",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#3a3a3a"
+                  },
+                  "gap": 16,
+                  "padding": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Ifj9C",
+                      "name": "opt4Check",
+                      "width": 24,
+                      "height": 24,
+                      "cornerRadius": 4,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#6b6b6b"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "FmwDN",
+                      "name": "opt4Text",
+                      "fill": "#FFFFFF",
+                      "content": "크게 고민 없음",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "rLWAq",
+              "name": "qNextBtn",
+              "width": "fill_container",
+              "height": 56,
+              "fill": "#666666",
+              "cornerRadius": 8,
+              "padding": [
+                16,
+                0
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "sNfH8",
+                  "name": "qNextText",
+                  "fill": "#FFFFFF",
+                  "content": "다음",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "rMXst",
+      "x": 3240,
+      "y": 0,
+      "name": "Test - ISI Question",
+      "width": 800,
+      "height": 700,
+      "fill": "#1a1a1a",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "fsRpq",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#1a1a1a",
+          "padding": [
+            16,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "v4B5U",
+              "name": "isiBack",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "zUCFT",
+                  "name": "isiBackIcon",
+                  "fill": "#FFFFFF",
+                  "content": "←",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "329c0",
+                  "name": "isiBackText",
+                  "fill": "#a0a0a0",
+                  "content": "뒤로",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "R7rxR",
+              "name": "isiLogo",
+              "fill": "#FFFFFF",
+              "content": "Sleep Thera",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "Be4V6",
+              "name": "isiPlaceholder",
+              "width": 80,
+              "height": 24
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "BVlIu",
+          "name": "isiProgress",
+          "width": "fill_container",
+          "height": 8,
+          "fill": "#2a2a2a",
+          "children": [
+            {
+              "type": "frame",
+              "id": "BDEcz",
+              "name": "isiProgressFill",
+              "width": 450,
+              "height": 8,
+              "fill": "#666666"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "s2tlM",
+          "name": "isiContent",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "RZVaZ",
+              "name": "isiPartLabel",
+              "fill": "#888888",
+              "content": "Part 2 / 3  •  Q1 / 7",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "HwSgn",
+              "name": "isiTitle",
+              "fill": "#FFFFFF",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "최근 2주간, 잠들기 어려운 정도는 어땠나요?",
+              "lineHeight": 1.4,
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "4Ftee",
+              "name": "isiOptions",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "NdScb",
+                  "name": "isiOpt0",
+                  "width": "fill_container",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#3a3a3a"
+                  },
+                  "gap": 16,
+                  "padding": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "XuhcX",
+                      "name": "isiOpt0Num",
+                      "width": 36,
+                      "height": 36,
+                      "cornerRadius": 18,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#6b6b6b"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "aFqqQ",
+                          "name": "isiOpt0NumText",
+                          "fill": "#a0a0a0",
+                          "content": "0",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "l9imB",
+                      "name": "isiOpt0Text",
+                      "fill": "#FFFFFF",
+                      "content": "전혀 없다",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "orEoG",
+                  "name": "isiOpt1",
+                  "width": "fill_container",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#3a3a3a"
+                  },
+                  "gap": 16,
+                  "padding": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Iw0At",
+                      "name": "isiOpt1Num",
+                      "width": 36,
+                      "height": 36,
+                      "cornerRadius": 18,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#6b6b6b"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "7aWDE",
+                          "name": "isiOpt1NumText",
+                          "fill": "#a0a0a0",
+                          "content": "1",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "gn590",
+                      "name": "isiOpt1Text",
+                      "fill": "#FFFFFF",
+                      "content": "약간 있다",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "N5NGS",
+                  "name": "isiOpt2",
+                  "width": "fill_container",
+                  "fill": "#666666",
+                  "cornerRadius": 12,
+                  "gap": 16,
+                  "padding": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "14d4x",
+                      "name": "isiOpt2Num",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 18,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "A3dAs",
+                          "name": "isiOpt2NumText",
+                          "fill": "#888888",
+                          "content": "2",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "9p2j5",
+                      "name": "isiOpt2Text",
+                      "fill": "#FFFFFF",
+                      "content": "보통이다",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "9nE7L",
+                  "name": "isiOpt3",
+                  "width": "fill_container",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#3a3a3a"
+                  },
+                  "gap": 16,
+                  "padding": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qIPIb",
+                      "name": "isiOpt3Num",
+                      "fill": "#a0a0a0",
+                      "content": "3",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "JKgh8",
+                      "name": "isiOpt3Text",
+                      "fill": "#FFFFFF",
+                      "content": "심하다",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "8OGpk",
+                  "name": "isiOpt4",
+                  "width": "fill_container",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#3a3a3a"
+                  },
+                  "gap": 16,
+                  "padding": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "H5ENK",
+                      "name": "isiOpt4Num",
+                      "fill": "#a0a0a0",
+                      "content": "4",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5uBuL",
+                      "name": "isiOpt4Text",
+                      "fill": "#FFFFFF",
+                      "content": "매우 심하다",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "EAqng",
+              "name": "isiNextBtn",
+              "width": "fill_container",
+              "fill": "#666666",
+              "cornerRadius": 12,
+              "padding": [
+                16,
+                32
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Ze04S",
+                  "name": "isiNextText",
+                  "fill": "#FFFFFF",
+                  "content": "다음",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "bold"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "09dv3",
+      "x": 4080,
+      "y": 0,
+      "name": "Test - Result",
+      "width": 800,
+      "height": 900,
+      "fill": "#1a1a1a",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "fXHLE",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#1a1a1a",
+          "padding": [
+            16,
+            48
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "h6ETp",
+              "name": "resultLogo",
+              "fill": "#FFFFFF",
+              "content": "Sleep Thera",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "seOf6",
+          "name": "Content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            40,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "CnxEK",
+              "name": "Badge",
+              "fill": "#666666",
+              "cornerRadius": 20,
+              "padding": [
+                8,
+                20
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "hmPjT",
+                  "name": "resultBadgeText",
+                  "fill": "#FFFFFF",
+                  "content": "중등도 불면증",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "bold"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Cihn4",
+              "name": "ScoreSection",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ThHtl",
+                  "name": "resultScoreLabel",
+                  "fill": "#a0a0a0",
+                  "content": "내 불면증 심각도",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "w5ggi",
+                  "name": "resultScore",
+                  "fill": "#FFFFFF",
+                  "content": "18",
+                  "fontFamily": "Inter",
+                  "fontSize": 72,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "text",
+                  "id": "TigTM",
+                  "name": "resultScoreMax",
+                  "fill": "#a0a0a0",
+                  "content": "/ 28점",
+                  "fontFamily": "Inter",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "OoIZb",
+              "name": "resultMsg",
+              "fill": "#a0a0a0",
+              "textGrowth": "fixed-width",
+              "width": 400,
+              "content": "불면증이 일상에 상당한 영향을 주고 있어요.\n전문적인 수면 치료가 도움이 될 수 있습니다.",
+              "lineHeight": 1.6,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "FgziA",
+              "name": "ShareBtn",
+              "cornerRadius": 8,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#666666"
+              },
+              "gap": 8,
+              "padding": [
+                12,
+                24
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "8RMNw",
+                  "name": "resultShareIcon",
+                  "content": "🔗",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "fOOn9",
+                  "name": "resultShareText",
+                  "fill": "#888888",
+                  "content": "결과 공유하기",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "bold"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "WeqlY",
+              "name": "Divider",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "#2a2a2a"
+            },
+            {
+              "type": "frame",
+              "id": "Tb1kx",
+              "name": "FormSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": [
+                24,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "IuV9z",
+                  "name": "resultFormTitle",
+                  "fill": "#FFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "20만원 상당의 4주 수면 테라피,\n무료로 체험하기",
+                  "lineHeight": 1.4,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "text",
+                  "id": "pj8rd",
+                  "name": "resultFormSubtitle",
+                  "fill": "#a0a0a0",
+                  "content": "더 빨리 잠들고, 덜 깨고, 더 개운하게",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "DQrqJ",
+                  "name": "resultFormSocial",
+                  "fill": "#888888",
+                  "content": "이미 230명이 신청했어요",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "sXTC4",
+                  "name": "EmailField",
+                  "width": "fill_container",
+                  "fill": "#0f0f0f",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#3a3a3a"
+                  },
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ruA7C",
+                      "name": "resultEmailPlaceholder",
+                      "fill": "#666666",
+                      "content": "이메일 주소",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "7MD1d",
+                  "name": "PhoneField",
+                  "width": "fill_container",
+                  "fill": "#0f0f0f",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#3a3a3a"
+                  },
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "LH4Oc",
+                      "name": "resultPhonePlaceholder",
+                      "fill": "#666666",
+                      "content": "휴대폰 번호 (선택)",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "FOf7T",
+                  "name": "Consent",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "rkxla",
+                      "name": "Checkbox",
+                      "width": 24,
+                      "height": 24,
+                      "cornerRadius": 4,
+                      "stroke": {
+                        "thickness": 2,
+                        "fill": "#3a3a3a"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "2KUX4",
+                      "name": "resultConsentText",
+                      "fill": "#a0a0a0",
+                      "content": "개인정보 수집 및 이용에 동의합니다",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "UUrpp",
+                  "name": "SubmitBtn",
+                  "width": "fill_container",
+                  "fill": "#666666",
+                  "cornerRadius": 12,
+                  "padding": [
+                    16,
+                    32
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "pIdPF",
+                      "name": "resultSubmitText",
+                      "fill": "#FFFFFF",
+                      "content": "무료 체험 신청하기",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "2Rc86",
+      "x": 4960,
+      "y": 0,
+      "name": "Register - Form",
+      "width": 800,
+      "height": 700,
+      "fill": "#1a1a1a",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "pvcBT",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#1a1a1a",
+          "padding": [
+            16,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "c1xnM",
+              "name": "Back",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KNEFZ",
+                  "name": "regBackIcon",
+                  "fill": "#FFFFFF",
+                  "content": "←",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "UMuqU",
+                  "name": "regBackText",
+                  "fill": "#a0a0a0",
+                  "content": "뒤로",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "pyVZV",
+              "name": "regLogo",
+              "fill": "#FFFFFF",
+              "content": "Sleep Thera",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "TYuR0",
+              "name": "regPlaceholder",
+              "width": 80,
+              "height": 24
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "XK9xQ",
+          "name": "Content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            60,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Y8Xsn",
+              "name": "regTitle",
+              "fill": "#FFFFFF",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "20만원 상당의 4주 수면 테라피,\n무료로 체험하기",
+              "lineHeight": 1.4,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "text",
+              "id": "Htjtm",
+              "name": "regSubtitle",
+              "fill": "#a0a0a0",
+              "content": "더 빨리 잠들고, 덜 깨고, 더 개운하게",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "UUH8R",
+              "name": "regSocial",
+              "fill": "#888888",
+              "content": "이미 230명이 신청했어요",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "dMqgR",
+              "name": "FormFields",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "nfnel",
+                  "name": "EmailField",
+                  "width": "fill_container",
+                  "fill": "#0f0f0f",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#3a3a3a"
+                  },
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zLaXe",
+                      "name": "regEmailPlaceholder",
+                      "fill": "#666666",
+                      "content": "이메일 주소",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Sz2x3",
+                  "name": "PhoneField",
+                  "width": "fill_container",
+                  "fill": "#0f0f0f",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#3a3a3a"
+                  },
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "SBQbR",
+                      "name": "regPhonePlaceholder",
+                      "fill": "#666666",
+                      "content": "휴대폰 번호 (선택)",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "1WYse",
+                  "name": "Consent",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "d9Of2",
+                      "name": "Checkbox",
+                      "width": 24,
+                      "height": 24,
+                      "cornerRadius": 4,
+                      "stroke": {
+                        "thickness": 2,
+                        "fill": "#3a3a3a"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "9SzaE",
+                      "name": "regConsentText",
+                      "fill": "#a0a0a0",
+                      "content": "개인정보 수집 및 이용에 동의합니다",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wn16J",
+              "name": "SubmitBtn",
+              "width": "fill_container",
+              "fill": "#666666",
+              "cornerRadius": 12,
+              "padding": [
+                16,
+                32
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "elLN8",
+                  "name": "regSubmitText",
+                  "fill": "#FFFFFF",
+                  "content": "무료 체험 신청하기",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "bold"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "OK8sK",
+      "x": 5760,
+      "y": 0,
+      "name": "Register - Success + Test Part 1",
+      "width": 800,
+      "height": 1000,
+      "fill": "#1a1a1a",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "KDrA9",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "fill": "#1a1a1a",
+          "padding": [
+            16,
+            48
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "lXW3B",
+              "name": "successLogo",
+              "fill": "#FFFFFF",
+              "content": "Sleep Thera",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ttUaP",
+          "name": "Content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            40,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "498jO",
+              "name": "Icon",
+              "width": 60,
+              "height": 60,
+              "fill": "#666666",
+              "cornerRadius": 30,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Dix1C",
+                  "name": "successCheck",
+                  "fill": "#FFFFFF",
+                  "content": "✓",
+                  "fontFamily": "Inter",
+                  "fontSize": 28,
+                  "fontWeight": "bold"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "yQad8",
+              "name": "successTitle",
+              "fill": "#FFFFFF",
+              "content": "등록이 완료되었어요!",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "text",
+              "id": "BCm0D",
+              "name": "successMsg",
+              "fill": "#a0a0a0",
+              "textGrowth": "fixed-width",
+              "width": 400,
+              "content": "맞춤형 수면 테라피 제공을 위해\n수면 상태를 확인해볼게요",
+              "lineHeight": 1.6,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "HJFbK",
+              "name": "Divider",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "#2a2a2a"
+            },
+            {
+              "type": "frame",
+              "id": "PtAOX",
+              "name": "TestSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": [
+                24,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "bA2Av",
+                  "name": "testPartLabel",
+                  "fill": "#888888",
+                  "content": "Part 1 / 3",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "3ZFPq",
+                  "name": "testQuestion",
+                  "fill": "#FFFFFF",
+                  "content": "어떤 수면 고민이 있으신가요?",
+                  "fontFamily": "Inter",
+                  "fontSize": 22,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "text",
+                  "id": "FrtTU",
+                  "name": "testHint",
+                  "fill": "#666666",
+                  "content": "복수 선택 가능",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "NXHoJ",
+                  "name": "Options",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zOAyj",
+                      "name": "Option1",
+                      "width": "fill_container",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#3a3a3a"
+                      },
+                      "gap": 12,
+                      "padding": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "iU8Gp",
+                          "name": "opt1Check",
+                          "width": 20,
+                          "height": 20,
+                          "cornerRadius": 4,
+                          "stroke": {
+                            "thickness": 2,
+                            "fill": "#3a3a3a"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "K4UWW",
+                          "name": "opt1Text",
+                          "fill": "#FFFFFF",
+                          "content": "잠들기가 어려워요",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "V2HIp",
+                      "name": "Option2",
+                      "width": "fill_container",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#3a3a3a"
+                      },
+                      "gap": 12,
+                      "padding": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "g4NVq",
+                          "name": "opt2Check",
+                          "width": 20,
+                          "height": 20,
+                          "cornerRadius": 4,
+                          "stroke": {
+                            "thickness": 2,
+                            "fill": "#3a3a3a"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "UEIMP",
+                          "name": "opt2Text",
+                          "fill": "#FFFFFF",
+                          "content": "자주 깨요",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "uUzdb",
+                      "name": "Option3",
+                      "width": "fill_container",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#3a3a3a"
+                      },
+                      "gap": 12,
+                      "padding": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "uKzt7",
+                          "name": "opt3Check",
+                          "width": 20,
+                          "height": 20,
+                          "cornerRadius": 4,
+                          "stroke": {
+                            "thickness": 2,
+                            "fill": "#3a3a3a"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "foyhA",
+                          "name": "opt3Text",
+                          "fill": "#FFFFFF",
+                          "content": "너무 일찍 깨요",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kgdv0",
+                      "name": "Option4",
+                      "width": "fill_container",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#3a3a3a"
+                      },
+                      "gap": 12,
+                      "padding": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "RHijL",
+                          "name": "opt4Check",
+                          "width": 20,
+                          "height": 20,
+                          "cornerRadius": 4,
+                          "stroke": {
+                            "thickness": 2,
+                            "fill": "#3a3a3a"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "inJa3",
+                          "name": "opt4Text",
+                          "fill": "#FFFFFF",
+                          "content": "크게 고민 없음",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "4TQop",
+                  "name": "NextBtn",
+                  "width": "fill_container",
+                  "fill": "#666666",
+                  "cornerRadius": 8,
+                  "padding": [
+                    14,
+                    24
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tq0Ap",
+                      "name": "nextText",
+                      "fill": "#FFFFFF",
+                      "content": "다음",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "bold"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
