@@ -1,0 +1,53 @@
+# 랜딩페이지 (/)
+
+> **전체 구조**: [OVERVIEW.md](../OVERVIEW.md) 참조
+
+---
+
+## 1. 페이지 목적
+
+Waiting List 등록 유도 및 수면 테스트로 사용자 흐름 연결
+
+---
+
+## 2. 사용자 플로우
+
+### 플로우 A: 등록 먼저
+```
+랜딩페이지 접속 → 스크롤 → /#register → 등록 → 테스트 유도
+```
+
+### 플로우 B: 테스트 먼저
+```
+랜딩페이지 접속 → "내 불면증 확인하기" 클릭 → /test → 결과 → 등록
+```
+
+---
+
+## 3. 화면별 기능 명세
+
+### Landing Page - Desktop
+
+![Landing Page - Desktop](../wireframes/labeled/Landing%20Page%20-%20Desktop-labeled.png)
+
+> 📁 원본: `docs/wireframes/Wireframe.pen` > Frame: "Landing Page - Desktop" (1440px)
+
+---
+
+#### LAND-001 Header
+
+**주요 기능**
+고정 헤더 + CTA 버튼
+
+**콘텐츠**
+| ID | 요소 | 내용 | 인터랙션 |
+|----|------|------|----------|
+| - | 로고 | 좌측 고정 | - |
+| LAND-001-a | CTA 버튼 | "내 수면 상태 확인하기" | 클릭 → /test |
+| - | 헤더 배경 | Fixed, 투명 → 흰색 | 스크롤 → 배경 흰색 + 그림자 |
+
+**테스트 시나리오**
+- CTA 버튼 클릭 → /test 페이지로 이동
+- 페이지 스크롤 → 헤더 배경 흰색 + 그림자 적용
+
+---
