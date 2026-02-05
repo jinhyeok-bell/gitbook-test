@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Label Position Editor</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #1a1a1a; color: #fff; }
+
+    .container { display: flex; height: 100vh; }
+
+    .sidebar {
+      width: 300px;
+      background: #2a2a2a;
+      padding: 16px;
+      overflow-y: auto;
+      border-right: 1px solid #444;
+    }
+
+    .sidebar h2 { font-size: 14px; margin-bottom: 12px; color: #888; }
+
+    .wireframe-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 8px;
+      background: #333;
+      border: 1px solid #444;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 13px;
+    }
+    .wireframe-btn:hover { background: #444; }
+    .wireframe-btn.active { background: #3B82F6; border-color: #3B82F6; }
+
+    .json-output {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+    }
+    .json-output h3 { font-size: 12px; color: #888; margin-bottom: 8px; }
+    .json-output textarea {
+      width: 100%;
+      height: 200px;
+      background: #1a1a1a;
+      border: 1px solid #444;
+      color: #fff;
+      padding: 8px;
+      font-family: monospace;
+      font-size: 11px;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    .copy-btn {
+      margin-top: 8px;
+      padding: 8px 16px;
+      background: #3B82F6;
+      border: none;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .copy-btn:hover { background: #2563EB; }
+
+    .editor {
+      flex: 1;
+      position: relative;
+      overflow: auto;
+      background: #111;
+    }
+
+    .canvas-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .canvas-container img {
+      display: block;
+      max-width: none;
+    }
+
+    .label {
+      position: absolute;
+      padding: 3px 6px;
+      font-size: 10px;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 3px;
+      cursor: move;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .label.section { background: #3B82F6; }
+    .label.component { background: #EF4444; }
+    .label:hover { opacity: 0.8; }
+    .label.dragging { opacity: 0.6; z-index: 1000; }
+
+    .coords {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #333;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    .instructions {
+      padding: 20px;
+      color: #888;
+      font-size: 13px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Wireframes</h2>
+      <div id="wireframe-list"></div>
+
+      <div class="json-output">
+        <h3>Updated JSON</h3>
+        <textarea id="json-output" readonly></textarea>
+        <button class="copy-btn" onclick="copyJson()">Copy JSON</button>
+      </div>
+    </div>
+
+    <div class="editor" id="editor">
+      <div class="instructions">
+        <p>Select a wireframe from the sidebar</p>
+        <p style="margin-top: 8px; font-size: 11px;">Drag labels to reposition them</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="coords" id="coords">x: 0, y: 0</div>
+
+  <script>
+    // Load positions from JSON file (you'll need to paste the content here or load via server)
+    let positions = {};
+    let currentWireframe = null;
+
+    // Base path for images (relative to this HTML file)
+    const IMAGE_BASE = '../docs/wireframes/original/';
+
+    async function init() {
+      // Try to load positions from the JSON file
+      try {
+        const response = await fetch('./label-positions.json');
+        positions = await response.json();
+      } catch (e) {
+        console.log('Could not load label-positions.json, using empty positions');
+        positions = {};
+      }
+
+      renderWireframeList();
+    }
+
+    function renderWireframeList() {
+      const list = document.getElementById('wireframe-list');
+      list.innerHTML = '';
+
+      Object.keys(positions).forEach(name => {
+        const btn = document.createElement('button');
+        btn.className = 'wireframe-btn';
+        btn.textContent = name;
+        btn.onclick = () => selectWireframe(name);
+        list.appendChild(btn);
+      });
+    }
+
+    function selectWireframe(name) {
+      currentWireframe = name;
+
+      // Update active button
+      document.querySelectorAll('.wireframe-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent === name);
+      });
+
+      // Render editor
+      const editor = document.getElementById('editor');
+      const imagePath = IMAGE_BASE + name + '.png';
+
+      editor.innerHTML = `
+        <div class="canvas-container" id="canvas">
+          <img src="${imagePath}" alt="${name}" onload="renderLabels()">
+        </div>
+      `;
+
+      // Track mouse position
+      editor.onmousemove = (e) => {
+        const canvas = document.getElementById('canvas');
+        if (!canvas) return;
+        const rect = canvas.getBoundingClientRect();
+        const x = Math.round(e.clientX - rect.left + editor.scrollLeft);
+        const y = Math.round(e.clientY - rect.top + editor.scrollTop);
+        document.getElementById('coords').textContent = `x: ${x}, y: ${y}`;
+      };
+
+      updateJsonOutput();
+    }
+
+    function renderLabels() {
+      const canvas = document.getElementById('canvas');
+      if (!canvas || !currentWireframe) return;
+
+      const labels = positions[currentWireframe]?.labels || [];
+
+      labels.forEach((label, index) => {
+        const el = document.createElement('div');
+        el.className = `label ${label.type}`;
+        el.textContent = label.id;
+        el.style.left = label.x + 'px';
+        el.style.top = label.y + 'px';
+        el.dataset.index = index;
+
+        // Make draggable
+        el.onmousedown = startDrag;
+
+        canvas.appendChild(el);
+      });
+    }
+
+    let dragEl = null;
+    let dragOffset = { x: 0, y: 0 };
+
+    function startDrag(e) {
+      e.preventDefault();
+      dragEl = e.target;
+      dragEl.classList.add('dragging');
+
+      const rect = dragEl.getBoundingClientRect();
+      const canvas = document.getElementById('canvas').getBoundingClientRect();
+      const editor = document.getElementById('editor');
+
+      dragOffset.x = e.clientX - rect.left;
+      dragOffset.y = e.clientY - rect.top;
+
+      document.onmousemove = onDrag;
+      document.onmouseup = stopDrag;
+    }
+
+    function onDrag(e) {
+      if (!dragEl) return;
+
+      const canvas = document.getElementById('canvas');
+      const canvasRect = canvas.getBoundingClientRect();
+      const editor = document.getElementById('editor');
+
+      let x = e.clientX - canvasRect.left - dragOffset.x + editor.scrollLeft;
+      let y = e.clientY - canvasRect.top - dragOffset.y + editor.scrollTop;
+
+      // Clamp to canvas bounds
+      x = Math.max(0, Math.min(x, canvas.offsetWidth - dragEl.offsetWidth));
+      y = Math.max(0, Math.min(y, canvas.offsetHeight - dragEl.offsetHeight));
+
+      dragEl.style.left = x + 'px';
+      dragEl.style.top = y + 'px';
+
+      // Update position in data
+      const index = parseInt(dragEl.dataset.index);
+      positions[currentWireframe].labels[index].x = Math.round(x);
+      positions[currentWireframe].labels[index].y = Math.round(y);
+
+      updateJsonOutput();
+    }
+
+    function stopDrag() {
+      if (dragEl) {
+        dragEl.classList.remove('dragging');
+        dragEl = null;
+      }
+      document.onmousemove = null;
+      document.onmouseup = null;
+    }
+
+    function updateJsonOutput() {
+      const output = document.getElementById('json-output');
+      if (currentWireframe && positions[currentWireframe]) {
+        output.value = JSON.stringify(positions[currentWireframe], null, 2);
+      }
+    }
+
+    function copyJson() {
+      const output = document.getElementById('json-output');
+      output.select();
+      document.execCommand('copy');
+
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy JSON', 1500);
+    }
+
+    // Initialize
+    init();
+  </script>
+</body>
+</html>

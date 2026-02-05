@@ -1,0 +1,74 @@
+{
+  "Landing Page - Desktop": {
+    "labels": [
+      { "id": "LAND-001", "x": 20, "y": 20, "type": "section" },
+      { "id": "LAND-001-a", "x": 1200, "y": 25, "type": "component" },
+      { "id": "LAND-002", "x": 20, "y": 100, "type": "section" },
+      { "id": "LAND-002-a", "x": 600, "y": 400, "type": "component" },
+      { "id": "LAND-003", "x": 20, "y": 600, "type": "section" },
+      { "id": "LAND-004", "x": 20, "y": 900, "type": "section" },
+      { "id": "LAND-005", "x": 20, "y": 1200, "type": "section" },
+      { "id": "LAND-006", "x": 20, "y": 1500, "type": "section" },
+      { "id": "LAND-007", "x": 20, "y": 1800, "type": "section" },
+      { "id": "LAND-007-a", "x": 700, "y": 2000, "type": "component" },
+      { "id": "LAND-008", "x": 20, "y": 2200, "type": "section" },
+      { "id": "LAND-009", "x": 20, "y": 2500, "type": "section" },
+      { "id": "LAND-009-a", "x": 150, "y": 2650, "type": "component" },
+      { "id": "LAND-009-b", "x": 850, "y": 2550, "type": "component" },
+      { "id": "LAND-009-c", "x": 850, "y": 2720, "type": "component" },
+      { "id": "LAND-010", "x": 20, "y": 3000, "type": "section" },
+      { "id": "LAND-010-a", "x": 200, "y": 3100, "type": "component" },
+      { "id": "LAND-011", "x": 20, "y": 3400, "type": "section" }
+    ]
+  },
+  "Test - Intro": {
+    "labels": [
+      { "id": "TEST-001", "x": 20, "y": 20, "type": "section" },
+      { "id": "TEST-002", "x": 20, "y": 150, "type": "section" },
+      { "id": "TEST-002-a", "x": 300, "y": 450, "type": "component" }
+    ]
+  },
+  "Test - Question": {
+    "labels": [
+      { "id": "TEST-003", "x": 20, "y": 80, "type": "section" },
+      { "id": "TEST-003-a", "x": 30, "y": 100, "type": "component" },
+      { "id": "TEST-004", "x": 20, "y": 180, "type": "section" },
+      { "id": "TEST-004-a", "x": 100, "y": 380, "type": "component" }
+    ]
+  },
+  "Test - ISI Question": {
+    "labels": [
+      { "id": "TEST-003", "x": 20, "y": 80, "type": "section" },
+      { "id": "TEST-003-a", "x": 30, "y": 100, "type": "component" },
+      { "id": "TEST-005", "x": 20, "y": 180, "type": "section" }
+    ]
+  },
+  "Test - Result": {
+    "labels": [
+      { "id": "TEST-008", "x": 20, "y": 80, "type": "section" },
+      { "id": "TEST-008-a", "x": 300, "y": 400, "type": "component" },
+      { "id": "TEST-008-b", "x": 350, "y": 500, "type": "component" },
+      { "id": "TEST-009", "x": 20, "y": 550, "type": "section" },
+      { "id": "TEST-009-a", "x": 100, "y": 725, "type": "component" }
+    ]
+  },
+  "Register - Form": {
+    "labels": [
+      { "id": "REG-001", "x": 20, "y": 80, "type": "section" },
+      { "id": "REG-001-a", "x": 260, "y": 275, "type": "component" },
+      { "id": "REG-002", "x": 20, "y": 280, "type": "section" },
+      { "id": "REG-002-a", "x": 100, "y": 350, "type": "component" },
+      { "id": "REG-002-b", "x": 100, "y": 420, "type": "component" },
+      { "id": "REG-002-c", "x": 100, "y": 490, "type": "component" },
+      { "id": "REG-003", "x": 20, "y": 550, "type": "section" },
+      { "id": "REG-003-a", "x": 100, "y": 600, "type": "component" }
+    ]
+  },
+  "Register - Success + Test Part 1": {
+    "labels": [
+      { "id": "REG-004", "x": 20, "y": 80, "type": "section" },
+      { "id": "TEST-004", "x": 20, "y": 280, "type": "section" },
+      { "id": "TEST-004-a", "x": 100, "y": 400, "type": "component" }
+    ]
+  }
+}
